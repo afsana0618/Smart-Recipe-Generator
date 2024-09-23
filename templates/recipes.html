@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+</head>
+<body>
+    <h1>Recipes</h1>
+    
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <h2>{{ recipe.title }}</h2>
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                <!-- Direct link to Spoonacular's site for each recipe -->
+                <p><a href="https://spoonacular.com/recipes/{{ recipe.title | replace(' ', '-') }}-{{ recipe.id }}">View Recipe</a></p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
